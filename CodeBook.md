@@ -1,24 +1,25 @@
-##DATA DICTIONARY - MEAN AND STANDARD DEVIATION BY SUBJECT AND ACTIVITY BASED ON DATA FROM THE HUMAN ACTIVITY RECOGNITION USING SMARTPHONES DATASET
+####DATA DICTIONARY - MEAN AND STANDARD DEVIATION BY SUBJECT AND ACTIVITY BASED ON DATA FROM THE HUMAN ACTIVITY RECOGNITION USING SMARTPHONES DATASET
 
 
-Subject
-	Subject ID for measurement data collected
-	Data Range: 1 - 30
+* Subject
+	* Subject ID for measurement data collected
+	* Data Range: 1 - 30
 
-TrainingType
-	Type of Training/Activity Data was collected for
-	Data Values:	WALKING
-					WALKING_UPSTAIRS
-					WALKING_DOWNSTAIRS
-					SITTING
-					STANDING
-					LAYING
+* TrainingType
+	* Type of Training/Activity Data was collected for
+	* Data Values:
+		* WALKING
+		* WALKING_UPSTAIRS
+		* WALKING_DOWNSTAIRS
+		* SITTING
+		* STANDING
+		* LAYING
 
-TimeDomainBodyAccelXDirMean
-	Mean of Means of X Direction Body Accelerations in Time Domain
+###TimeDomainBodyAccelXDirMean
+	####Mean of Means of X Direction Body Accelerations in Time Domain
 
-TimeDomainBodyAccelYDirMean
-	Mean of Means of Y Direction Body Accelerations in Time Domain
+###TimeDomainBodyAccelYDirMean
+####Mean of Means of Y Direction Body Accelerations in Time Domain
 
 TimeDomainBodyAccelZDirMean
 	Mean of Means of X Direction Body Accelerations in Time Domain
