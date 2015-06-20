@@ -18,75 +18,99 @@
 
 * TimeDomainBodyAccelXDirMean
 	* Mean of Means of X Direction Body Accelerations in Time Domain
+	* Units: standard gravity units 'g'
 
 * TimeDomainBodyAccelYDirMean
 	* Mean of Means of Y Direction Body Accelerations in Time Domain
+	* Units: normalized acceleration - distance/time^2
 
 * TimeDomainBodyAccelZDirMean
 	* Mean of Means of X Direction Body Accelerations in Time Domain
+	* Units: normalized acceleration - distance/time^2
 
 * TimeDomainGravityAccelXDirMean
 	* Mean of Means of X Direction Gravity Accelerations in Time Domain
+	* Units: normalized acceleration - distance/time^2
 
 * TimeDomainGravityAccelYDirMean
 	* Mean of Means of Y Direction Gravity Accelerations in Time Domain
+	* Units: normalized acceleration - distance/time^2
 
 * TimeDomainGravityAccelZDirMean
 	* Mean of Means of Z Direction Gravity Accelerations in Time Domain
+	* Units: normalized acceleration - distance/time^2
 
 * TimeDomainBodyAccelJerkXDirMean
 	* Mean of Means of X Direction Body Jerk in Time Domain (Jerk is rate of change in time of Acceleration)
+	* Units: normalized jerk - distance/time^3
 
 * TimeDomainBodyAccelJerkYDirMean
 	* Mean of Means of Y Direction Body Jerk in Time Domain (Jerk is rate of change in time of Acceleration)
+	* Units: normalized jerk - distance/time^3
 
 * TimeDomainBodyAccelJerkZDirMean
 	* Mean of Means of Z Direction Body Jerk in Time Domain (Jerk is rate of change in time of Acceleration)
+	* Units: normalized jerk - distance/time^3
 
 * TimeDomainBodyAngularVelocityXDirMean
 	* Mean of Means of X Direction Body Angular Velocity in Time Domain
+	* Units: normalized angular velocity - angle/time
 
 * TimeDomainBodyAngularVelocityYDirMean
 	* Mean of Means of Y Direction Body Angular Velocity in Time Domain
+	* Units: normalized angular velocity - angle/time
 
 * TimeDomainBodyAngularVelocityZDirMean
 	* Mean of Means of Z Direction Body Angular Velocity in Time Domain
+	* Units: normalized angular velocity - angle/time
 
 * TimeDomainBodyAngularVelocityJerkXDirMean
 	* Mean of Means of X Direction Body Angular Jerk in Time Domain
+	* Units: normalized angular velocity jerk - angle/time^3
 
 * TimeDomainBodyAngularVelocityJerkYDirMean
 	* Mean of Means of Y Direction Body Angular Jerk in Time Domain
+	* Units: normalized angular velocity jerk - angle/time^3
 
 * TimeDomainBodyAngularVelocityJerkZDirMean
 	* Mean of Means of Z Direction Body Angular Jerk in Time Domain
+	* Units: normalized angular velocity jerk - angle/time^3
 
 * TimeDomainBodyAccelMagMean
 	* Mean of Means of Body Acceleration Magnitude in Time Domain
+	* Units: normalized acceleration - distance/time^2
 
 * TimeDomainGravityAccelMagMean
 	* Mean of Means of Gravity Acceleration Magnitude in Time Domain
+	* Units: normalized acceleration - distance/time^2
 
 * TimeDomainBodyAccelJerkMagMean
 	* Mean of Means of Body Jerk Magnitude in Time Domain (Jerk is the rate of change in time of Acceleration)
+	* Units: normalized jerk - distance/time^3
 
 * TimeDomainBodyAngularVelocityMagMean
 	* Mean of Means of Body Angular Velocity Magnitude in Time Domain
+	* Units: normalized angular velocity - angle/time
 
 * TimeDomainBodyAngularVelocityJerkMagMean
 	* Mean of Means of Body Angular Jerk Magnitude in Time Domain
+	* Units: normalized angular velocity jerk - angle/time^3
 
 * FreqDomainBodyAccelXDirMean
 	* Mean of Means of X Direction Body Accelerations in Frequency Domain
+	* Units: normalized acceleration - distance/time^2
 
 * FreqDomainBodyAccelYDirMean
 	* Mean of Means of Y Direction Body Accelerations in Frequency Domain
+	* Units: normalized acceleration - distance/time^2
 
 * FreqDomainBodyAccelZDirMean
 	* Mean of Means of Z Direction Body Accelerations in Frequency Domain
+	* Units: normalized acceleration - distance/time^2
 
 * FreqDomainBodyAccelXDirFreqMean
 	* Mean of Means of X Direction Body Accelerations Frequencies in Frequency Domain
+	* Units: normalized X - angle/time^3
 
 * FreqDomainBodyAccelYDirFreqMean
 	* Mean of Means of Y Direction Body Accelerations Frequencies in Frequency Domain
@@ -96,12 +120,15 @@
 
 * FreqDomainBodyAccelJerkXDirMean
 	* Mean of Means of X Direction Body Jerk in Frequency Domain
+	* Units: normalized jerk - distance/time^3
 
 * FreqDomainBodyAccelJerkYDirMean
 	* Mean of Means of Y Direction Body Jerk in Frequency Domain
+	* Units: normalized jerk - distance/time^3
 
 * FreqDomainBodyAccelJerkZDirMean
 	* Mean of Means of Z Direction Body Jerk in Frequency Domain
+	* Units: normalized jerk - distance/time^3
 
 * FreqDomainBodyAccelJerkXDirFreqMean
 	* Mean of Means of X Direction Body Accelerations Frequencies in Frequency Domain
@@ -114,12 +141,15 @@
 
 * FreqDomainBodyAngularVelocityXDirMean
 	* Mean of Means of X Direction Body Angular Velocity in Frequency Domain
+	* Units: normalized angular velocity - angle/time
 
 * FreqDomainBodyAngularVelocityYDirMean
 	* Mean of Means of Y Direction Body Angular Velocity in Frequency Domain
+	* Units: normalized angular velocity - angle/time
 
 * FreqDomainBodyAngularVelocityZDirMean
 	* Mean of Means of Z Direction Body Angular Velocity in Frequency Domain
+	* Units: normalized angular velocity - angle/time
 
 * FreqDomainBodyAngularVelocityXDirFreqMean
 	* Mean of Means of X Direction Body Angular Velocity Frequencies in Frequency Domain
@@ -132,24 +162,28 @@
 
 * FreqDomainBodyAccelMagMean
 	* Mean of Means of Body Acceleration Magnitude in Frequency Domain
+	* Units: normalized acceleration - distance/time^2
 
 * FreqDomainBodyAccelMagMeanFreq
 	* Mean of Means of Body Acceleration Frequency Magnitude in Frequency Domain
 
 * FreqDomainBodyAccelJerkMagMean
 	* Mean of Means of Body Jerk Magnitude in Frequency Domain
+	* Units: normalized jerk - distance/time^3
 
 * FreqDomainBodyAccelJerkMagMeanFreq
 	* Mean of Means of Body Jerk Frequency Magnitude in Frequency Domain
 
 * FreqDomainBodyAngularVelocityMagMean
 	* Mean of Means of Body Angular Velocity Magnitude in Frequency Domain
+	* Units: normalized angular velocity - angle/time
 
 * FreqDomainBodyAngularVelocityMagMeanFreq
 	* Mean of Means of Body Angular Velocity Frequency Magnitude in Frequency Domain
 
 * FreqDomainBodyAngularVelocityJerkMagMean
 	* Mean of Means of Body Angular Jerk Magnitude in Frequency Domain
+	* Units: normalized angular velocity jerk - angle/time^3
 
 * FreqDomainBodyAngularVelocityJerkMagMeanFreq
 	* Mean of Means of Body Angular Jerk Frequency Magnitude in Frequency Domain
@@ -177,102 +211,135 @@
 
 * TimeDomainBodyAccelXDirStdDev
 	* Mean of Standard Deviations of X Direction Body Accerations in Time Domain
+	* Units: normalized acceleration - distance/time^2
 
 * TimeDomainBodyAccelYDirStdDev
 	* Mean of Standard Deviations of Y Direction Body Accerations in Time Domain
+	* Units: normalized acceleration - distance/time^2
  
 * TimeDomainBodyAccelZDirStdDev
 	* Mean of Standard Deviations of Z Direction Body Accerations in Time Domain
+	* Units: normalized acceleration - distance/time^2
 
 * TimeDomainGravityAccelXDirStdDev
 	* Mean of Standard Deviations of X Direction Gravity Accerations in Time Domain
+	* Units: normalized acceleration - distance/time^2
 
 * TimeDomainGravityAccelYDirStdDev
 	* Mean of Standard Deviations of Y Direction Gravity Accerations in Time Domain
+	* Units: normalized acceleration - distance/time^2
 
 * TimeDomainGravityAccelZDirStdDev
 	* Mean of Standard Deviations of Z Direction Gravity Accerations in Time Domain
+	* Units: normalized acceleration - distance/time^2
 
 * TimeDomainBodyAccelJerkXDirStdDev
 	* Mean of Standard Deviations of X Direction Body Jerk in Time Domain
+	* Units: normalized jerk - distance/time^3
 
 * TimeDomainBodyAccelJerkYDirStdDev
 	* Mean of Standard Deviations of Y Direction Body Jerk in Time Domain
+	* Units: normalized jerk - distance/time^3
 
 * TimeDomainBodyAccelJerkZDirStdDev
 	* Mean of Standard Deviations of Z Direction Body Jerk in Time Domain
+	* Units: normalized jerk - distance/time^3
 
 * TimeDomainBodyAngularVelocityXDirStdDev
 	* Mean of Standard Deviations of X Direction Body Angular Velocity in Time Domain
+	* Units: normalized angular velocity - angle/time
 
 * TimeDomainBodyAngularVelocityYDirStdDev
 	* Mean of Standard Deviations of Y Direction Body Angular Velocity in Time Domain
+	* Units: normalized angular velocity - angle/time
 
 * TimeDomainBodyAngularVelocityZDirStdDev
 	* Mean of Standard Deviations of Z Direction Body Angular Velocity in Time Domain
+	* Units: normalized angular velocity - angle/time
 
 * TimeDomainBodyAngularVelocityJerkXDirStdDev
 	* Mean of Standard Deviations of X Direction Body Angular Jerk in Time Domain
+	* Units: normalized angular velocity jerk - angle/time^3
 
 * TimeDomainBodyAngularVelocityJerkYDirStdDev
 	* Mean of Standard Deviations of Y Direction Body Angular Jerk in Time Domain
+	* Units: normalized angular velocity jerk - angle/time^3
 
 * TimeDomainBodyAngularVelocityJerkZDirStdDev
 	* Mean of Standard Deviations of Z Direction Body Angular Jerk in Time Domain
+	* Units: normalized angular velocity jerk - angle/time^3
 
 * TimeDomainBodyAccelMagStdDev
 	* Mean of Standard Deviations of Body Acceleration in Time Domain
+	* Units: normalized acceleration - distance/time^2
 
 * TimeDomainGravityAccelMagStdDev
 	* Mean of Standard Deviations of Magnitude of Gravity Acceleration in Time Domain
+	* Units: normalized acceleration - distance/time^2
 
 * TimeDomainBodyAccelJerkMagStdDev
 	* Mean of Standard Deviations of Magnitude of Body Jerk in Time Domain
+	* Units: normalized jerk - distance/time^3
 
 * TimeDomainBodyAngularVelocityMagStdDev
 	* Mean of Standard Deviations of Magnitude of Body Angular Velocity in Time Domain
+	* Units: normalized angular velocity - angle/time
 
 * TimeDomainBodyAngularVelocityJerkMagStdDev
 	* Mean of Standard Deviations of Magnitude of Body Angular Jerk in Time Domain
+	* Units: normalized angular velocity jerk - angle/time^3
 
 * FreqDomainBodyAccelXDirStdDev
 	* Mean of Standard Deviations of X Direction of Body Acceleration in Frequency Domain
+	* Units: normalized acceleration - distance/time^2
 
 * FreqDomainBodyAccelYDirStdDev
 	* Mean of Standard Deviations of Y Direction of Body Acceleration in Frequency Domain
+	* Units: normalized acceleration - distance/time^2
 
 * FreqDomainBodyAccelZDirStdDev
 	* Mean of Standard Deviations of Z Direction of Body Acceleration in Frequency Domain
+	* Units: normalized acceleration - distance/time^2
 
 * FreqDomainBodyAccelJerkXDirStdDev
 	* Mean of Standard Deviations of X Direction of Body Jerk in Frequency Domain
+	* Units: normalized jerk - distance/time^3
 
 * FreqDomainBodyAccelJerkYDirStdDev
 	* Mean of Standard Deviations of Y Direction of Body Jerk in Frequency Domain
+	* Units: normalized jerk - distance/time^3
 
 * FreqDomainBodyAccelJerkZDirStdDev
 	* Mean of Standard Deviations of Z Direction of Body Jerk in Frequency Domain
+	* Units: normalized jerk - distance/time^3
 
 * FreqDomainBodyAngularVelocityXDirStdDev
 	* Mean of Standard Deviations of X Direction of Body Angular Velocity in Frequency Domain
+	* Units: normalized angular velocity - angle/time
 
 * FreqDomainBodyAngularVelocityYDirStdDev
 	* Mean of Standard Deviations of Y Direction of Body Angular Velocity in Frequency Domain
+	* Units: normalized angular velocity - angle/time
 
 * FreqDomainBodyAngularVelocityZDirStdDev
 	* Mean of Standard Deviations of Z Direction of Body Angular Velocity in Frequency Domain
+	* Units: normalized angular velocity - angle/time
 
 * FreqDomainBodyAccelMagStdDev
 	* Mean of Standard Deviations of Magnitude of Body Acceleration in Frequency Domain
+	* Units: normalized acceleration - distance/time^2
 
 * FreqDomainBodyAccelJerkMagStdDev
 	* Mean of Standard Deviations of Magnitude of Body Jerk in Frequency Domain
+	* Units: normalized jerk - distance/time^3
 
 * FreqDomainBodyAngularVelocityMagStdDev
 	* Mean of Standard Deviations of Magnitude of Body Angular Velocity in Frequency Domain
+	* Units: normalized angular velocity - angle/time
 
 * FreqDomainBodyAngularVelocityJerkMagStdDev
 	* Mean of Standard Deviations of Magnitude of Body Angular Jerk in Frequency Domain
+	* Units: normalized angular velocity jerk - angle/time^3
 
 
 #####DATA
