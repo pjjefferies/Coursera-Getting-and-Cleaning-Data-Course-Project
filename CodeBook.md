@@ -1,5 +1,6 @@
 ####DATA DICTIONARY - MEAN AND STANDARD DEVIATION BY SUBJECT AND ACTIVITY BASED ON DATA FROM THE HUMAN ACTIVITY RECOGNITION USING SMARTPHONES DATASET
 
+#####VARIABLES
 
 * Subject
 	* Subject ID for measurement data collected
@@ -272,3 +273,69 @@
 
 * FreqDomainBodyAngularVelocityJerkMagStdDev
 	* Mean of Standard Deviations of Magnitude of Body Angular Jerk in Frequency Domain
+
+
+#####DATA
+
+* Data Supplied
+	* activity_labels.txt
+		* List of 6 Activies numbered 1-6 with descriptions: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+	* test/subject_test.txt
+		* List of subjects that measurements were recoreded for for each line of measurements in X_test.txt
+	* test/y_test.txt
+		* List of activities that measurements were recoreded for for each line of measurements in X_test.txt
+	* test/X_test.txt
+		* Matrix of summarized measurements (columns) from exercisse equipment for each condition (subject, activity)
+	* train/subject_train.txt
+		* List of subjects that measurements were recoreded for for each line of measurements in X_test.txt
+	* train/y_train.txt
+		* List of activities that measurements were recoreded for for each line of measurements in X_test.txt
+	* train/X_train.txt
+		* Matrix of summarized measurements (columns) from exercisse equipment for each condition (subject, activity)
+
+
+* Data Produced
+	* ActivityMeaurementDataMean.txt
+		* Mean of Average and Standard Deviation Data by 6 Activies
+	* SubjectMeasurementDataMean.txt
+		* Mean of Average and Standard Deviation Data by 30 Subjects
+
+
+#####TRANSFORMATIONS OR WORK
+
+######Description of Work below. See "run_analysis.R" and/or "README.md" for full R script
+
+* Read Activity Data Labels from "activity_labels.txt" file as character strings
+* Read Measurement data variables names from "features.txt" as character strings
+* Create Descriptive Variable Names for each measurement summary
+	* Start by creating a vector copy of original measurement variables names
+	* Replace cryptic variable name parts with more descriptive parts
+	* Add descriptive Labels to Data measurement Label Dataframe and keep as characters (not factors)
+	* Create a vector of training variables with mean/Mean and standard deviation only
+	* Add subject and activity variable names to training variables to keep
+* Read-in Training Data
+	* Read Training Type ID for each Activity recored in "X_train.txt" from "Y_train.txt" in "train" folder cast as numeric variables
+	* Read Subject ID for each Activity recorded in "X_train.txt" from "subject_train.txt" in "train" folder cast as numeric variables
+	* Read activity measurement data from "X_train.txt" in "train" folder using variable headings from measurementLabels third (descriptive) column
+	* Combine Subject ID variable, Training Type ID and Description variable and measurement data variables
+* Read-in Test Data
+	* Read Training Type ID for each Activity recored in "X_test.txt" from "Y_test.txt" in "test" folder cast as numeric variables
+	* Add a column to testType of the description of training from activityDataLabels
+	* Read Subject ID for each Activity recorded in "X_test.txt" from "subject_test.txt" in "test" folder cast as numeric variables
+	* Read activity measurement data from "X_test.txt" in "test" folder using variable headings from measurementLabels  third (descriptive) column
+	* Combine Subject ID variable, Test Type ID and Description variable and measurement data variables
+	* Combine training activity data and test activity data into activityData
+*Subset activityData with only subject, activity and mean/Mean/std measurements
+* Create Summary by Subject
+	* Split Activity Data into a list of dataframes by Subject number
+	* Create matrix of column means for each data frame in list of activity data by subject
+	* Transpose matrix of column means to put variables in columns, subjects in rows
+	* Remove column of means of Traning IDs as nonsense data
+	* Convert matrix of measurement means for each subjct to data frame
+* Create Summary by Activity
+	* Split Activity Data into a list of dataframes by Activity
+	* Create matrix of column means for each data frame in list of activity data by activity
+	* Transpose matrix of column means to put variables in columns, activities in rows
+	* Remove column of means of Subject numbers as nonsense data, Also remove TrainingIDs as we want Descriptive Training Types
+	* Add Training Types as first column, also converts to data.frame, Yea!
+* Write Mean data of columns summary by subject and activity to files
