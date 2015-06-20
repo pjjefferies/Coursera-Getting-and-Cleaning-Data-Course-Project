@@ -303,7 +303,7 @@
 
 #####TRANSFORMATIONS OR WORK
 
-######Description of Work below. See "run_analysis.R" and/or "README.md" for full R script
+######Description of Work below. See "run_analysis.R" for full R script
 
 * Read Activity Data Labels from "activity_labels.txt" file as character strings
 * Read Measurement data variables names from "features.txt" as character strings
