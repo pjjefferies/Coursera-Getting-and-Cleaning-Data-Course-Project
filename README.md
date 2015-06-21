@@ -16,6 +16,9 @@ data supplied separately for each subject and separately for each activity.
 * 'run_analysis.R':                  R Script for making the tidy data
 * 'ActivityMeasurementDataMean.txt': Output data - means of mean and stardard deviation data by activity
 * 'SubjectMeasurementDataMean.txt' : Output data - means of mean and stardard deviation data by subject
+* 'SubjectActivityMeasurementDataMean.txt': Output data - means of mean and stardard deviation data by combinations of subject and activity
+
+####NOTE: Two different versions of output supplied since instructions were not clear on whether do 'by-activity' and 'by-subject' separately or together.
 
 ### Original Data Source
 https://d396qusza40orc.cloudfront.net/getdata/projectfiles/FUCI%20HAR%20Dataset.zip

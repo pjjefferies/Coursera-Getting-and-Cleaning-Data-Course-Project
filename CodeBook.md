@@ -379,11 +379,13 @@
 		* Matrix of summarized measurements (columns) from exercisse equipment for each condition (subject, activity)
 
 
-* Data Produced
+* Data Produced (NOTE: Data supplied in 2 forms due to lack of clarity in instructions)
 	* ActivityMeaurementDataMean.txt
 		* Mean of Average and Standard Deviation Data by 6 Activies
 	* SubjectMeasurementDataMean.txt
 		* Mean of Average and Standard Deviation Data by 30 Subjects
+	* SubjectActivityMeasurementDataMean.txt
+		* Mean of Average and Standard Deviation Data by Combination of 6 Activities and 30 Subjects (180 combinations)
 
 
 #####TRANSFORMATIONS OR WORK
@@ -423,4 +425,13 @@
 	* Transpose matrix of column means to put variables in columns, activities in rows
 	* Remove column of means of Subject numbers as nonsense data, Also remove TrainingIDs as we want Descriptive Training Types
 	* Add Training Types as first column, also converts to data.frame, Yea!
+
+* Create Summary by Subject and Activity Combined
+	* Split Activity Data into a list of dataframes by Subject & Activity combined
+	* Create matrix of column means for each data frame in list of activity data by activity
+	* Transpose matrix of column means to put variables in columns, activities in rows
+	* Remove column of means of Subject numbers as nonsense data
+	* Remove TrainingIDs as we want Descriptive Training Types
+	* Add Subject and Training Types as first columns and converts to data frame
+
 * Write Mean data of columns summary by subject and activity to files

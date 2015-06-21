@@ -9,7 +9,7 @@ library(dplyr)
 #Read Activity Data Labels from "activity_labels.txt" file as character strings
 activityDataLabels <- read.table("activity_labels.txt",
                                  colClasses = c("numeric", "character"),
-                                 col.name = c("TrainingID", "TrainingType"))
+                                 col.name = c("ActivityID", "ActivityType"))
 
 #Read Measurement data variables names from "features.txt" as
 #character strings
@@ -83,19 +83,19 @@ trainVars <- c(meanTrainVars, stdTrainVars)
 remove(meanTrainVars, stdTrainVars, measLabels, descMeasurementLabels)
 
 #Add subject and activity variable names to training variables to keep
-#trainVars <- c("Subject", "TrainingID", "TrainingType", trainVars)
-trainVars <- c("Subject", "TrainingID", trainVars)
+#trainVars <- c("Subject", "ActivityID", "ActivityType", trainVars)
+trainVars <- c("Subject", "ActivityID", trainVars)
 
 
 ###
 #           READING TRAIN DATA SECTION
 ###
 
-#Read Training Type ID for each Activity recored in "X_train.txt"
+#Read Activity Type ID for each Activity recored in "X_train.txt"
 #from "Y_train.txt" in "train" folder cast as numeric variables
 trainType <- read.table("train/Y_train.txt",
                         colClasses = "numeric",
-                        col.name = c("TrainingID"))
+                        col.name = c("ActivityID"))
 
 #Read Subject ID for each Activity recorded in "X_train.txt"
 #from "subject_train.txt" in "train" folder cast as numeric variables
@@ -110,7 +110,7 @@ trainActivityData <- read.table("train/X_train.txt",
                                 comment.char = "",
                                 col.name = measurementLabels[,3])
 
-#combine Subject ID variable, Training Type ID and Description
+#combine Subject ID variable, Activity Type ID and Description
 #variable and measurement data variables
 trainActivityData <- cbind(trainSubject, trainType, trainActivityData)
 
@@ -119,18 +119,11 @@ trainActivityData <- cbind(trainSubject, trainType, trainActivityData)
 #           READING TEST DATA SECTION
 ###
 
-#Read Training Type ID for each Activity recored in "X_test.txt"
+#Read Activity Type ID for each Activity recored in "X_test.txt"
 #from "Y_test.txt" in "test" folder cast as numeric variables
 testType <- read.table("test/Y_test.txt",
                        colClasses = "numeric",
-                       col.name = c("TrainingID"))
-
-#Add a column to testType of the description of training from
-#activityDataLabels
-#testType <- join(testType,
-#                 activityDataLabels,
-#                 by="TrainingID",
-#                 type="left")
+                       col.name = c("ActivityID"))
 
 #Read Subject ID for each Activity recorded in "X_test.txt"
 #from "subject_test.txt" in "test" folder cast as numeric variables
@@ -181,7 +174,7 @@ subjectMeasurementDataMean <- sapply(subjectMeasurementData, colMeans)
 subjectMeasurementDataMean <- t(subjectMeasurementDataMean)
 
 #Remove column of means of Traning IDs as nonsense data
-subjectMeasurementDataMean <- subset(subjectMeasurementDataMean, select = -c(TrainingID))
+subjectMeasurementDataMean <- subset(subjectMeasurementDataMean, select = -c(ActivityID))
 
 #Convert matrix of measurement means for each subjct to data frame
 subjectMeasurementDataMean <- as.data.frame(subjectMeasurementDataMean)
@@ -192,7 +185,7 @@ subjectMeasurementDataMean <- as.data.frame(subjectMeasurementDataMean)
 ###
 
 #Split Activity Data into a list of dataframes by Activity
-activityMeasurementData <- split(activityData, activityData$TrainingID)
+activityMeasurementData <- split(activityData, activityData$ActivityID)
 
 #Create matrix of column means for each data frame in list of activity data by activity
 activityMeasurementDataMean <- sapply(activityMeasurementData, colMeans)
@@ -202,15 +195,49 @@ activityMeasurementDataMean <- t(activityMeasurementDataMean)
 
 #Remove column of means of Subject numbers as nonsense data
 #Also remove TrainingIDs as we want Descriptive Training Types
-activityMeasurementDataMean <- subset(activityMeasurementDataMean, select = -c(Subject, TrainingID))
+activityMeasurementDataMean <- subset(activityMeasurementDataMean, select = -c(Subject, ActivityID))
 
 #Add Training Types as first column, also converts to data.frame, Yea!
 activityMeasurementDataMean <- cbind(activityDataLabels[2],
                                      activityMeasurementDataMean)
 
+###
+#Create Summary by Subject and Activity Combined
+###
+
+#Split Activity Data into a list of dataframes by Subject & Activity combined
+subjectActivityMeasurementData <- split(activityData, list(activityData$Subject,
+                                                           activityData$ActivityID))
+
+#Create matrix of column means for each data frame in list of activity data by activity
+subjectActivityMeasurementDataMean <- sapply(subjectActivityMeasurementData, colMeans)
+
+#Transpose matrix of column means to put variables in columns, activities in rows
+subjectActivityMeasurementDataMean <- t(subjectActivityMeasurementDataMean)
+
+#Remove column of means of Subject numbers as nonsense data
+#Also remove TrainingIDs as we want Descriptive Training Types
+subjectActivityMeasurementDataMean <- as.data.frame(subset(subjectActivityMeasurementDataMean,
+                                                           select = -c(Subject, ActivityID)))
+
+#Add Subject and Training Types as first columns and converts to data frame
+rowNames <- as.numeric(row.names(subjectActivityMeasurementDataMean))
+subjectsInSAMDM <- as.data.frame(cbind(Subject = floor(rowNames)))
+activitiesInSAMDM <- as.data.frame(cbind(ActivityType = c(rep(activityDataLabels[1,2], 30),
+                                                          rep(activityDataLabels[2,2], 30),
+                                                          rep(activityDataLabels[3,2], 30),
+                                                          rep(activityDataLabels[4,2], 30),
+                                                          rep(activityDataLabels[5,2], 30),
+                                                          rep(activityDataLabels[6,2], 30))))
+subjectActivityMeasurementDataMean <- as.data.frame(cbind(Subject = subjectsInSAMDM$Subject,
+                                                          ActivityType = activitiesInSAMDM$ActivityType,
+                                                          subjectActivityMeasurementDataMean))
+
 #Clean-up unneeded temporary data from memeory
 remove(subjectMeasurementData,
-       activityMeasurementData)
+       activityMeasurementData,
+       subjectActivityMeasurementData,
+       rowNames, subjectsInSAMDM, activitiesInSAMDM, trainVars)
 
 
 #Write Mean data of columns summary by subject and activity to files
@@ -223,3 +250,6 @@ write.table(activityMeasurementDataMean,
             file="ActivityMeasurementDataMean.txt",
             row.name=FALSE)
 
+write.table(subjectActivityMeasurementDataMean,
+            file="SubjectActivityMeasurementDataMean.txt",
+            row.name=FALSE)
